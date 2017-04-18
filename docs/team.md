@@ -9,8 +9,8 @@ title:  Team
 ## Qimu Ding
 ***UCI Net ID***: qdingqim
 
-## USER 2
-***UCI Net ID***: ucinetid
+## Xiaocheng Yang
+***UCI Net ID***: xiaochy2
 
 ## USER 3
 ***UCI Net ID***: ucinetid
