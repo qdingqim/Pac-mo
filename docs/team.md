@@ -6,8 +6,8 @@ title:  Team
 # {{ page.title }}
 
 
-## USER 1
-***UCI Net ID***: ucinetid
+## Qimu Ding
+***UCI Net ID***: qdingqim
 
 ## USER 2
 ***UCI Net ID***: ucinetid
