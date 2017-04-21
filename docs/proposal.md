@@ -8,7 +8,7 @@ title: Proposal
 hello world
 
 ## AI/ML Algorithms
-hello world
+We are planning to use reinforcement learning with neural function approximator for the malmo grid solving agent, and Dijkstra's algorithm for the monsters in the game.
 
 ## Evaluation Plan
 hello world
