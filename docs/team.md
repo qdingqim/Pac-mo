@@ -12,5 +12,5 @@ title:  Team
 ## Xiaocheng Yang
 ***UCI Net ID***: xiaochy2
 
-## USER 3
-***UCI Net ID***: ucinetid
+## Jong Duk Shinn
+***UCI Net ID***: jdshinn
