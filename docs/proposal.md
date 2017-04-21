@@ -14,4 +14,4 @@ We are planning to use reinforcement learning with neural function approximator 
 hello world
 
 ## Appointment with the Instructor
-May 1st, 2017 at 2:30pm
+(reserved) May 1st, 2017 at 2:30pm
