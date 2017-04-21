@@ -1,3 +1,2 @@
 # Project Pac-Mo
-by Group 17
-CS 175
+by Project Group 17 in CS 175
