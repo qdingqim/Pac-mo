@@ -4,7 +4,7 @@ title: Proposal
 ---
 ## Project Pac-Mo
 
-## Summary of the Project
+# Summary of the Project
 
 
 Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Bandai
