@@ -11,7 +11,9 @@ Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Ba
 We are planning to use reinforcement learning with neural function approximator for the solving agent, and Dijkstra's algorithm for the monsters in the game.
 
 ## Evaluation Plan
-The metrics of the project is the score which is calculated by the dots
+The metrics of the project is the scores which are calculated by the dots( the sword in the game). At the start of the game, the agent follows a fixed path list to go randomly. As the agent dies and learns, it will gradually know some certain point and path it cannot go. There is a time limit for the game. The final score is calculated once the agent is killed or the time runs out. 
+
+With experiments, the agent will find a optimum route to get all the swords without being killed by monsters. The best route is made by building the path list in the algorithm. The sanity case will be that the agent gets all the sword which means the highest score within the least time without dying.
 
 ## Appointment with the Instructor
 (reserved) May 1st, 2017 at 2:30pm
