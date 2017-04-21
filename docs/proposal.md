@@ -2,14 +2,16 @@
 layout: default
 title: Proposal
 ---
-## Summary of the Project ##
+## Project Pac-Mo
+
+## Summary of the Project
 hello world
 
-## AI/ML Algorithms ##
+## AI/ML Algorithms
 hello world
 
-## Evaluation Plan ##
+## Evaluation Plan
 hello world
 
-## Appointment with the Instructor ##
+## Appointment with the Instructor
 May 1st, 2017 at 2:30pm
