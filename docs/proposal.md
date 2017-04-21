@@ -19,4 +19,4 @@ The metrics of the project is the scores which are calculated by the dots( the s
 With experiments, the agent will find a optimum route to get all the swords without being killed by monsters. The best route is made by building the path list in the algorithm. The sanity case will be that the agent gets all the sword which means the highest score within the least time without dying.
 
 ### Appointment with the Instructor
-(reserved) May 1st, 2017 at 2:30pm
+May 1st, 2017 at 2:30pm
