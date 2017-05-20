@@ -1,5 +1,5 @@
 """
-CS 177 Group 17 Project Pac-mo Version 1.1
+CS 175 Group 17 Project Pac-mo Version 1.1
 Pacmo is trying to get the most diamonds from the moster pool
 Code structures based on the two assignments and multi_agent_test.py
 
