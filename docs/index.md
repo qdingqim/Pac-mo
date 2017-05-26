@@ -16,4 +16,4 @@ The monsters in Pac-Mo, unlike the original game, cannot be eaten by the player;
 
 [Source_Code](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1.5.py)
 
-![Alt Text](https://pixabay.com/p-151558/?no_redirect)
+![Alt Text](https://pixabay.com/photo-151558/)
