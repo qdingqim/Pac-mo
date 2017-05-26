@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 
-_Add your text here_
+#:gem: Pac-mo in Minecraft :gem:
 
 
 What's Markdown (`.md`)?
