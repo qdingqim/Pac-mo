@@ -14,6 +14,6 @@ The monsters in Pac-Mo, unlike the original game, cannot be eaten by the player;
 - Dijkrstra for the monster's action
 - Q-Learning for agent's reinforcement learning
 
-[Source_Code](../../README.md)
+[Source_Code](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1.5.py)
 
-
+![Alt Text](https://pixabay.com/p-151558/?no_redirect)
