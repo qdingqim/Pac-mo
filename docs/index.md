@@ -4,7 +4,7 @@ title:  Home
 ---
 
 # Pac-mo in Minecraft 
-:gem::gem:__Summery__:gem::gem:
+##__Summery__
 
 Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Bandai Namco Games.The AI of Pac-Mo will be developed based on Minecraft Malmo. The goal of this game is to get the highest score from each stage, while the agent should avoid four monsters in the closed map that kills the player at once if contacted. The dots, which gives a score in the original game, will be replaced by "gold_ingot" in Minecraft. 
 
@@ -12,12 +12,13 @@ The monsters in Pac-Mo, unlike the original game, cannot be eaten by the player;
 
 ![Alt Text](https://pixabay.com/photo-151558/)
 
-:gem::gem:__Algorithm adapted__:gem::gem:
+##__Algorithm adapted__
 - Dijkrstra for the monster's action
 - Q-Learning for agent's reinforcement learning
-
-[Source_Code](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1.5.py)
 
 _Check out the original game! :_ [click](https://www.google.com/search?q=pac+man&rlz=1C1CHZL_zh-CNUS736US736&oq=pac+man&aqs=chrome..69i57j0l5.2287j0j9&sourceid=chrome&ie=UTF-8#clb=clb)
 
 _See our game here!:_
+
+
+[Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1.5.py)
