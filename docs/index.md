@@ -3,8 +3,8 @@ layout: default
 title:  Home
 ---
 
-#:gem: Pac-mo in Minecraft :gem:
-
+# Pac-mo in Minecraft 
+:gem::gem::gem::gem::gem::gem::gem::gem::gem:
 
 What's Markdown (`.md`)?
 
