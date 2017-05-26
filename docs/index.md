@@ -4,7 +4,7 @@ title:  Home
 ---
 
 # Pac-mo in Minecraft 
-:gem::gem::gem::gem::gem::gem::gem::gem::gem:
+:gem::gem:__Summery__:gem::gem:
 
 What's Markdown (`.md`)?
 
