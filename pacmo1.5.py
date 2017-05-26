@@ -177,7 +177,33 @@ def drawWalls():
 
 
     return xml
-
+def pacmo_decorator():
+    xml = ""
+    #P
+    xml+= '<DrawCuboid x1="5" y1="202" z1="5" x2="5" y2="202" z2="1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="4" y1="202" z1="5" x2="3" y2="202" z2="5" type="sponge"/>'
+    xml+= '<DrawCuboid x1="4" y1="202" z1="3" x2="3" y2="202" z2="3" type="sponge"/>'
+    xml+= '<DrawCuboid x1="3" y1="202" z1="4" x2="3" y2="202" z2="4" type="sponge"/>'
+    #A
+    xml+= '<DrawCuboid x1="1" y1="202" z1="5" x2="1" y2="202" z2="1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-1" y1="202" z1="5" x2="-1" y2="202" z2="1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="0" y1="202" z1="5" x2="0" y2="202" z2="5" type="sponge"/>'
+    xml+= '<DrawCuboid x1="0" y1="202" z1="3" x2="0" y2="202" z2="3" type="sponge"/>'
+    #C
+    xml+= '<DrawCuboid x1="-3" y1="202" z1="5" x2="-3" y2="202" z2="1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-5" y1="202" z1="5" x2="-4" y2="202" z2="5" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-5" y1="202" z1="1" x2="-4" y2="202" z2="1" type="sponge"/>'
+    #M
+    xml+= '<DrawCuboid x1="5" y1="202" z1="-5" x2="5" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="3" y1="202" z1="-5" x2="3" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="1" y1="202" z1="-5" x2="1" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="1" y1="202" z1="-1" x2="5" y2="202" z2="-1" type="sponge"/>'
+    #O
+    xml+= '<DrawCuboid x1="-1" y1="202" z1="-5" x2="-1" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-5" y1="202" z1="-5" x2="-5" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-1" y1="202" z1="-1" x2="-5" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-1" y1="202" z1="-5" x2="-5" y2="202" z2="-5" type="sponge"/>'
+    return xml
 def inventory_condition(index):
     xml = ""
     if index == 0:
@@ -216,7 +242,7 @@ def getXML(reset):
           <DrawingDecorator>
             <DrawCuboid x1="-9" y1="200" z1="-9" x2="9" y2="220" z2="9" type="stained_glass" colour="WHITE"/>
             <DrawCuboid x1="-8" y1="202" z1="-8" x2="8" y2="250" z2="8" type="air"/>
-            <DrawBlock x="0" y="213" z="0" type="barrier"/>''' + drawWalls() + drawItems() + '''
+            <DrawBlock x="0" y="213" z="0" type="barrier"/>''' + drawWalls() + drawItems() + pacmo_decorator() +'''
           </DrawingDecorator>
           <ServerQuitFromTimeUp description="" timeLimitMs="120000"/>
         </ServerHandlers>
@@ -231,10 +257,11 @@ def getXML(reset):
       xml += '''<AgentSection mode="Survival">
         <Name>''' + agentName(i) + '''</Name>
         <AgentStart>
-          <Placement x="''' + str(x_loc) + '''" y="204" z="''' + str(z_loc) + '''"/>
+          <Placement x="''' + str(x_loc) + '''" y="202" z="''' + str(z_loc) + '''"/>
           <Inventory>''' + inventory_condition(i) + '''</Inventory>
         </AgentStart>
         <AgentHandlers>
+          <DiscreteMovementCommands/>
           <ContinuousMovementCommands turnSpeedDegs="720"/>
           <ChatCommands/>
           <MissionQuitCommands/>
@@ -270,8 +297,8 @@ def getXML(reset):
             </Grid>
           </ObservationFromGrid>
           <VideoProducer>
-            <Width>1600</Width>
-            <Height>1600</Height>
+            <Width>800</Width>
+            <Height>600</Height>
           </VideoProducer>
         </AgentHandlers>
       </AgentSection>'''
@@ -594,8 +621,8 @@ def calcTurnValue(us, them, current_yaw):
 
 ########################################################################
 #### Functions for the player/Monster
-player_spawn = (7.0, -6.5)
-monster_spawn = (-6.5, 7.0)
+player_spawn = (7.5, -6.5)
+monster_spawn = (-6.5, 7.5)
 
 def agentName(i):
     if i == 0:
@@ -622,6 +649,8 @@ def player_action(last, block_coord, turn_count, yaw, grid):
         update_q_table(block, direction, 1)
 
     turn = calcTurnValue(block, to_where, yaw)
+    print q_table
+    print
     return walk_speed, turn, new_last
 
 def monster_action(block_coord, grid, yaw):
@@ -737,7 +766,9 @@ for mission_no in xrange(1, num_missions+1):
                 reason_for_term = "found"
                 if fs_appeared == False:
                     fs_appeared_at = mission_no
-                    fs_appeared = end_mission(ah, False, last)
+                    
+                    fs_appeared = true
+                        #end_mission(agent_hosts, False, last)
 
                 break
                 
