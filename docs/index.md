@@ -21,7 +21,7 @@ Algorithm adapted
 - Q-Learning for agent's reinforcement learning
 
 | The monster     | The player  |    The watcher|     
-| --------        | :-------:   | -------:      |    
+| :-------:       | :-------:   |  :-------:    |    
 | Dijkstra        |    Q-table  |               |     
 |![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/initial_capture.png)    |      ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/initial_capture.png)   |     ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/initial_capture.png)    | 
 
@@ -30,4 +30,5 @@ _Check out the original game! :_ [click](https://www.google.com/search?q=pac+man
 _See our game here!:_
 
 
-[Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
+[Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
+[Old version Source_Code:checkout!](https://github.com/qdingqim/Pac-mo)
