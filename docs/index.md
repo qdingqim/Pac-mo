@@ -21,7 +21,7 @@ Algorithm adapted
 - Q-Learning for agent's reinforcement learning
 
 | The monster     |The player| The watcher|    
-| :-------: |    :------:    |    :--------:    |    
+| :-------: |  :------:    |  :--------:    |    
 | Dijkstra        | Q-table |            |     
 |![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/monster.png)          |      ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/player.png)          |          ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/watcher.png)         | 
 
