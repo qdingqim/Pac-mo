@@ -31,6 +31,7 @@ _Check out the original game! :_ [click](https://www.google.com/search?q=pac+man
 ---------
 
 _See our game here!:_
+---------
 
 [![Watch the video](https://raw.github.com/GabLeRoux/WebMole/master/ressources/WebMole_Youtube_Video.png)](http://youtu.be/vt5fpE0bzSY)
 
