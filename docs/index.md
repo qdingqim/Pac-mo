@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 
-Pacmo! ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/timg.gif) 
+Pacmo! ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/timg.gif) 
 =========
 
 Summery
@@ -13,7 +13,8 @@ Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Ba
 
 The monsters in Pac-Mo, unlike the original game, cannot be eaten by the player; its ability to chase the player are varied by "the Level" of the game, such as finding the shortest path from each monster to the player for each movement of the player. The input for the agent will be an information of visible grid cell, such as vertically or horizontally reachable cells from current cell not blocked by walls or monsters. Then the agent will determine its best direction to obtain more swords or not to be killed by the monsters.
 
-<div style="text-align:center"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/initial_capture.png" /></div>  
+<div style="text-align:left"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/intro.png" /></div>  
+<div style="text-align:right"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/q_table.png" /></div>  
 
 Algorithm adapted
 ---------
