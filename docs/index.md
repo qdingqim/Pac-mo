@@ -3,9 +3,9 @@ layout: default
 title:  Home
 ---
 
-Pac-mo in Minecraft ![Alt Te xt](https://github.com/qdingqim/Pac-mo/raw/master/docs/timg.jpg)  
+Pac-mo in Minecraft  
 =========
-![Alt Te xt](https://github.com/qdingqim/Pac-mo/raw/master/docs/timg(1).jpg) 
+![Alt Te xt](https://github.com/qdingqim/Pac-mo/raw/master/docs/timg (1).jpg) 
 
 Summery
 ---------
