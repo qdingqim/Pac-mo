@@ -4,8 +4,7 @@ title:  Home
 ---
 
 Pac-mo in Minecraft  
-=========
-![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/timg.gif) 
+=========![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/timg.gif) 
 
 Summery
 ---------
