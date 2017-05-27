@@ -3,7 +3,7 @@ layout: default
 title:  Home
 ---
 
-Pac-mo in Minecraft 
+Pac-mo in Minecraft ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/initial_capture.png)  
 =========
 
 Summery
