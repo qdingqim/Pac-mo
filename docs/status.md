@@ -11,7 +11,7 @@ Since things may have changed since proposal (even if they haven’t), write a s
 	We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm moster_action returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed that the player walk.
    
 2. Tabular Q-learning
-	We are using <br>Tabular Q-learing<br> method for the player's (robot) movement.
+	We are using Tabular Q-learing method for the player's (robot) movement.
 
 ## Evaluation:
 An important aspect of your project, as we mentioned in the beginning, is evaluating yourproject. Be clear and precise about describing the evaluation setup, for both quantitative and qualitativeresults. Present the results to convince the reader that you have a working implementation. Use plots, charts,tables, screenshots, figures, etc. as needed. I expect you will need at least a few paragraphs to describe eachtype of evaluation that you perform.
