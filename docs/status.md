@@ -21,9 +21,11 @@ An important aspect of your project, as we mentioned in the beginning, is evalua
 
 ## Remaining Goals and Challenges:
 - Improving Q-learing:
+  
   We are trying to improve cases, where the q-values must be updated. Current version (1.6) Q-values are accumulated based on the success of each movement. For example, if the player succeed moving to the next cell chosen by the choose_action algorithm, the Q-value is updated with reward 1, in which its direction from the previous cell is updated. The player accumulates another 1 reward from picking up the "gold_ingot" in the game. The Q-values are decreased if and only if either the player detects the wall or the player is killed (contacted) to the monster. 
 
   Since for most cases, the Q-table are implemented in a static enviroment.(eg lava, fixed item). However for our game, the monster follows Dijkstra to the agent which means the pattern of its movement is somehow unpredictable. In this case, q-table doesn't work perfectly well. Our next goal is to find diverse cases of the q-value update instances and improve the accuracy of the Q-table or to find a better algorithm to help the agent learn.
 
 - Make more possible paths in the map:		
+  
   Current version (1.6) has one square shape map. We are going to add more paths in between maps; test out if the player can finish the game as Q-table is accumulated.
