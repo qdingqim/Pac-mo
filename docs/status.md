@@ -8,7 +8,7 @@ Since things may have changed since proposal (even if they haven’t), write a s
 
 ## Approach:
 1. Dijkstra's Algorithm
-	We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm	calculates its next location from current cell in its shortest path; the algorithm moster_action returns its turn ratio relative to 	the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed that the player walk.
+	We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm moster_action returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed that the player walk.
    
 2. Tabular Q-learning
    We are using <br>Tabular Q-learing<br> method for the player's (robot) movement.
