@@ -23,11 +23,11 @@ Algorithm adapted
 | The monster     |The player| The watcher|    
 | :-------: |    :------:    |    :--------:    |    
 | Dijkstra        | Q-table |            |     
-|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/monster.png)          |          ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/player.png)          |          ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/watcher.png)         | 
+|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/monster.png)          |      ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/player.png)          |          ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/watcher.png)         | 
 
 _Check out the original game! :_ [click](https://www.google.com/search?q=pac+man&rlz=1C1CHZL_zh-CNUS736US736&oq=pac+man&aqs=chrome..69i57j0l5.2287j0j9&sourceid=chrome&ie=UTF-8#clb=clb)
 
-_See our game here!:_[![Everything Is AWESOME](http://i.imgur.com/Ot5DWAW.png)](https://youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
+_See our game here!:_[![Everything Is AWESOME](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/monster.png)](https://youtu.be/StTqXEQ2l-Y?t=35s "Everything Is AWESOME")
 
 
 [Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
