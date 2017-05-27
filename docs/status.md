@@ -11,9 +11,11 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 ## Approach:
 1. Dijkstra's Algorithm:
+
 We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm moster_action returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed that the player walk.
    
 2. Tabular Q-learning:
+
 We are using Tabular Q-learing method for the player's (robot) movement.
 
 ## Evaluation:
@@ -21,7 +23,9 @@ An important aspect of your project, as we mentioned in the beginning, is evalua
 
 ## Remaining Goals and Challenges:
 1. Improving Q-learing:
+
 We are trying to improve cases, where the q-values must be updated. Current version (1.6) Q-values are accumulated based on the success of each movement. For example, if the player succeed moving to the next cell chosen by the choose_action algorithm, the Q-value is updated with reward 1, in which its direction from the previous cell is updated. The player accumulates another 1 reward from picking up the "gold_ingot" in the game. The Q-values are decreased if and only if either the player detects the wall or the player is killed (contacted) to the monster. Since for most cases, the Q-table are implemented in a static enviroment.(eg lava, fixed item). However for our game, the monster follows Dijkstra to the agent which means the pattern of its movement is somehow unpredictable. In this case, q-table doesn't work perfectly well. Our next goal is to find diverse cases of the q-value update instances and improve the accuracy of the Q-table or to find a better algorithm to help the agent learn.
 	
 2. Make more possible paths in the map:		
+
 Current version (1.6) has one square shape map. We are going to add more paths in between maps; test out if the player can finish the game as Q-table is accumulated.
