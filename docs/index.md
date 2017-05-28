@@ -36,5 +36,4 @@ __Introduction:__
 <br><br>__Current progress:__
 <br>[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/pv.png)](https://youtu.be/xJiR9AwN5yE)
 <br><br>[Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
-
-<br>[Old version Source_Code:checkout!](https://github.com/qdingqim/Pac-mo)
+[Old version Source_Code:checkout!](https://github.com/qdingqim/Pac-mo)
