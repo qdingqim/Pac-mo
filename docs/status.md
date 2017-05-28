@@ -77,7 +77,7 @@ The following code is a part of updating q table function:
 The reward of actions is set as if __wall__, __-9999__; if __monster__, __-1__; __if successful movement__ (from cell to cell), __+1__; if __gold__, __+1 (extra on top of the successful movement)__. The q_value is updated once the next cell chosen by the choose_action algorithm is performed. As more times q_value is updated, finally it leads to the best solution.
 
 q_table example:
-![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/q_capture.PNG)
+<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/q_capture.PNG)
 
 ## Evaluation:
 __- Measurement:__
