@@ -18,7 +18,7 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 ## Evaluation:
 - Measurement:
-<br>Current evaluation process is based on the number of steps and the number of missions until the player (Robot) reaches to the solution. The term solution is not the best solution yet; in fact, finding the best solution is not trivial since the game have moving monster that is chasing after the player. _Hence, we decided to compare the number of missions until some solution for each game in the current version (1.6)._ Current version has a range of 2-14 missions to some solution; interestingly, most solutions had 163 turns until the end of the game (solution state).
+<br>Current evaluation process is based on the number of steps and the number of missions until the player (Robot) reaches to the solution. The term solution is not the best solution yet; in fact, finding the best solution is not trivial since the game have moving monster that is chasing after the player. __Hence, we decided to compare the number of missions until some solution for each game in the current version (1.6).__ Current version has a range of 2-14 missions to some solution; interestingly, most solutions had 163 turns until the end of the game (solution state).
 
 - Comparison by version: 1.6 vs. 1.4
 <br>The following graph represents the number of missions until the player reaches some solution:
