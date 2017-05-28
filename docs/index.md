@@ -33,8 +33,8 @@ ___See our game here!:___
 
 __Introduction:__
 <br>[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/introv.png)](https://youtu.be/5p-iBizMFhM)
-<br>__Current progress:__
+<br><br>__Current progress:__
 <br>[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/pv.png)](https://youtu.be/xJiR9AwN5yE)
-<br>[Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
+<br><br>[Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
 
 <br>[Old version Source_Code:checkout!](https://github.com/qdingqim/Pac-mo)
