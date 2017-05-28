@@ -32,6 +32,7 @@ __- Comparison by version: 1.6 vs. 1.4__
 
 ## Remaining Goals and Challenges:
 For the challenge, it is mainly about how well the q_table would work. And except that, the remaining goal is to make the map and environment more complicated.
+
 __- Improving Q-learing:__
   
   We are trying to improve cases, where the q-values must be updated. Current version (1.6) Q-values are accumulated based on the success of each movement. For example, if the player succeed moving to the next cell chosen by the choose_action algorithm, the Q-value is updated with reward 1, in which its direction from the previous cell is updated. The player accumulates another 1 reward from picking up the "gold_ingot" in the game. The Q-values are decreased if and only if either the player detects the wall or the player is killed (contacted) to the monster. 
