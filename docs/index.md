@@ -31,9 +31,10 @@ ___Check out the original game! :___ [click](https://www.google.com/search?q=pac
 
 ___See our game here!:___
 
+__Introduction:.__
+<br>[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/introv.png)](https://youtu.be/5p-iBizMFhM)
+__Current progress:__
+<br>[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/pv.png)](https://youtu.be/xJiR9AwN5yE)
+<br>[Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
 
-[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/introv.png)](https://youtu.be/5p-iBizMFhM)
-
-[Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
-
-[Old version Source_Code:checkout!](https://github.com/qdingqim/Pac-mo)
+<br>[Old version Source_Code:checkout!](https://github.com/qdingqim/Pac-mo)
