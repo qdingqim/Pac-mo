@@ -32,7 +32,7 @@ ___Check out the original game! :___ [click](https://www.google.com/search?q=pac
 ___See our game here!:___
 
 
-[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/intro.jpg)](http://youtu.be/vt5fpE0bzSY)
+[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/intro.jpg)](https://youtu.be/R9dAVGDhhVU)
 
 [Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
 
