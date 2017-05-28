@@ -8,7 +8,7 @@ Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Ba
 
 The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; it is controlled by another client and its ability to chase the player is driven finding the shortest path from each monster to the player for each movement of the player. To give a full perspective of the map, a client of a watcher is added as well. The input for the agent will be an information of visible grid cell, such as vertically or horizontally reachable cells from current cell not blocked by walls or monsters. Then the agent will determine its best direction to obtain more "gold_ingot" and not to be killed by the monsters.
 
-[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/pv.png)](https://youtu.be/xJiR9AwN5yE)
+[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/pv.png)](https://youtu.be/xJiR9AwN5yE)
 ## Approach:
 The Pac-mo uses multi-agent Minecrafts. One for the monster, which implements the Dijkstra algorithm to chase the player, one for the player to perform reinforcement learning based on the Q_table to get the best reward which means maximum gold_ingot without death, and one for the observer which is placed above the map.
 
