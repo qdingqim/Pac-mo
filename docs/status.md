@@ -19,7 +19,7 @@ __- Dijkstra's Algorithm:__
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __moster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
 
 The following pictures depict the movement of the monster:
-<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)                                              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status2.png)
+<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/dijk.PNG)                                              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/dijk2.PNG)
    
 __- Tabular Q-learning:__
 <br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there exits 2 possible paths anytime in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
@@ -62,6 +62,15 @@ def choose_action(curr_coord, grid, last):
     return possible_actions[a]
 ```
 Notice in the middle of the code, there is a statement that makes agent go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table. Since, the epsilon is relatively small, theoredically, 99% of the choose_action function instances are based on the above procedures. Similarly the turn ratio relative to the player's current degree (turn) is returned.
+
+The following code is a part of updating q table function:
+```python
+   G = gamma * value
+   G += gamma ** n * q_table[curr_coord][direction][0]
+   old_q = q_table[curr_coord][direction][0]
+   q_table[curr_coord][direction][0] = old_q + alpha * (G - old_q)
+```
+Notice that from __choose_action__ function and the function above, the q_table has both value ([0] th value) and its adjacent coordinates towards its current cell's relative direction. The coordinates are used to calculate the turn ratio of the player.
 
 The reward of actions is set as if __wall__, __-9999__; if __monster__, __-1__; __if successful movement__ (from cell to cell), __+1__; if __gold__, __+1 (extra on top of the successful movement)__. The q_value is updated once the next cell chosen by the choose_action algorithm is performed. As more times q_value is updated, finally it leads to the best solution.
 
