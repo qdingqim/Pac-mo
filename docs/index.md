@@ -29,7 +29,7 @@ Algorithm adapted
 
 ___Check out the original game! :___ [click](https://www.google.com/search?q=pac+man&rlz=1C1CHZL_zh-CNUS736US736&oq=pac+man&aqs=chrome..69i57j0l5.2287j0j9&sourceid=chrome&ie=UTF-8#clb=clb)
 
-__See our game here!:___
+___See our game here!:___
 
 __Introduction:__
 <br>[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/introv.png)](https://youtu.be/5p-iBizMFhM)
