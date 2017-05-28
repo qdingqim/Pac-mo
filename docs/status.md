@@ -10,7 +10,7 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 
 ## Approach:
-The Pac-mo is realized by multi-agent. One for the monster which implements the Dijkstra algorithm to chase the player, one for the player to perform reinforcement learning based on the Q_table to get the best reward which means maximum gold without dying, and the other one is for the watcher which is placed above the map.
+The Pac-mo uses multi-agent Minecrafts. One for the monster, which implements the Dijkstra algorithm to chase the player, one for the player to perform reinforcement learning based on the Q_table to get the best reward which means maximum gold_ingot without death, and one for the observer which is placed above the map.
 
 __- Multi-Agent:__
 <br> The multi-agent is implemented by using MalmoPython.ClientPool. Also different Xml part is coded for different agent since the placement and game mode is different. The reason why we use Multi agents is that in this case the behavior of the monster is easier to control. Also the perspective of a watcher is given.
