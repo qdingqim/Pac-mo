@@ -17,11 +17,16 @@ __- Multi-Agent:__
 
 __- Dijkstra's Algorithm:__
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __moster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
+
+The following pictures depict the movement of the monster:
+<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)                                              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status2.png)
    
 __- Tabular Q-learning:__
 <br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there exits 2 possible paths anytime in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
 
+The following pictures depict the reward of the wall for each situation:
 <br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)                                              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status2.png)
+Notice that the reward of the wall is -9,999; that score forces the player not to walk through the wall.
 
 The following code is the __choose_action__ function in PacMo version 1.6.
 ```python
@@ -70,13 +75,13 @@ __- Comparison by version: 1.6 vs. 1.4__
 <br> Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. Hence, the __choose_action__ function revised in 1.6 has better path searching performance than the function in version 1.4
 
 ## Remaining Goals and Challenges:
-For the challenge, it is mainly about how well the q_table would work. And except that, the remaining goal is to make the map and environment more complicated.
+For the challenge, it is mainly about how well the q_table would work. And except that, the remaining goal is to make the map and environment much more complicated.
 
 __- Improving Q-learing:__
   
-  We are trying to improve cases, where the q-values must be updated. Current version (1.6) Q-values are accumulated based on the success of each movement. For example, if the player succeed moving to the next cell chosen by the choose_action algorithm, the Q-value is updated with reward 1, in which its direction from the previous cell is updated. The player accumulates another 1 reward from picking up the "gold_ingot" in the game. The Q-values are decreased if and only if either the player detects the wall or the player is killed (contacted) to the monster. 
+  We are trying to improve cases, where the q-values must be updated. Current version (1.6) Q-values are accumulated based on the success of each movement. For example, if the player succeed moving to the next cell chosen by the choose_action algorithm, the Q-value is updated with reward 1, in which its direction from the previous cell is updated. The player accumulates an extra 1 reward from picking up the "gold_ingot". The Q-values are decreased if and only if either the player detects the wall or the player is killed (contacted) by the monster. 
 
-  Since for most cases, the Q-table are implemented in a static enviroment.(eg lava, fixed item). However for our game, the monster follows Dijkstra to the agent which means the pattern of its movement is somehow unpredictable. In this case, q-table doesn’t work perfectly well. If we can find the only one solution to achieve the best reward without dying, the Q_learing would work perfectly well. Our next goal is to find diverse cases of the q-value update instances and improve the accuracy of the Q-table or to modify the algorithm based on current q-learning to help the agent learn.
+  Since for most cases, the Q-table are implemented in a static enviroment.(eg lava, fixed item). However for our game, the monster follows the player with Dijkstra's algorithm, which means the pattern of its movement is somehow unpredictable. In this case, q-table doesn’t work perfectly well. If we can find the only one solution to achieve the best reward without dying, the Q_learing would work perfectly well. Our next goal is to find diverse cases of the q-value update instances and improve the accuracy of the Q-table or to modify the algorithm based on current q-learning to help the agent learn.
 
 __- Make more possible paths in the map:__
   
