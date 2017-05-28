@@ -20,7 +20,14 @@ __- Dijkstra's Algorithm:__
    
 __- Tabular Q-learning:__
 <br>We are using Tabular Q-learing method for the player's (robot) movement.
-<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/choose_action.png)
+```python
+def choose_action(curr_coord, grid, last):    possible_actions = get_possible_action(get_block_index(curr_coord), grid)    if curr_coord not in q_table:        q_table[curr_coord] = {}
+    for direction, coord in possible_actions:        if direction not in q_table[curr_coord]:            q_table[curr_coord][direction] = [0, coord]
+    tol = 0.0001    rnd = random.random()    if last[1] != "" and last[1] in q_table[curr_coord]:        if q_table[last[0]][last[1]][0] >= 0 and q_table[curr_coord][last[1]][0] >= 0:            for i in range(len(possible_actions)):                if possible_actions[i][0] == last[1]:                    return possible_actions[i]
+    if rnd < epsilon:        a = random.randint(0, len(possible_actions) - 1)
+    else:        m = max([x[0] for x in q_table[curr_coord].values()])        l = list()        for direction, coord in possible_actions:            for value, coordinate in q_table[curr_coord].values():                if abs(value-m) <= tol:                    l.append((direction, coord))                return l[random.randint(0, len(l)-1)]
+    return possible_actions[a]
+```
 
 ## Evaluation:
 __- Measurement:__
