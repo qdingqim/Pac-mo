@@ -20,6 +20,7 @@ __- Dijkstra's Algorithm:__
    
 __- Tabular Q-learning:__
 <br>We are using Tabular Q-learing method for the player's (robot) movement.
+<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/choose_action.png)
 
 ## Evaluation:
 __- Measurement:__
