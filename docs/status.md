@@ -19,7 +19,7 @@ __- Dijkstra's Algorithm:__
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __moster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
    
 __- Tabular Q-learning:__
-<br>We are using Tabular Q-learing method for the player's (robot) movement.
+<br>We are using Tabular Q-learing method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible states: __'north','south', 'east', 'west'__.
 ```python
 def choose_action(curr_coord, grid, last):
    possible_actions = get_possible_action(get_block_index(curr_coord), grid)
