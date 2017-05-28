@@ -70,6 +70,7 @@ The following code is a part of updating q table function:
    old_q = q_table[curr_coord][direction][0]
    q_table[curr_coord][direction][0] = old_q + alpha * (G - old_q)
 ```
+
 Notice that from __choose_action__ function and the function above, the q_table has both value ([0] th value) and its adjacent coordinates towards its current cell's relative direction. The coordinates are used to calculate the turn ratio of the player.
 
 The reward of actions is set as if __wall__, __-9999__; if __monster__, __-1__; __if successful movement__ (from cell to cell), __+1__; if __gold__, __+1 (extra on top of the successful movement)__. The q_value is updated once the next cell chosen by the choose_action algorithm is performed. As more times q_value is updated, finally it leads to the best solution.
