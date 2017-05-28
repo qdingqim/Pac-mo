@@ -58,7 +58,7 @@ def choose_action(curr_coord, grid, last):
 ```
 Notice in the middle of the code, there is a statement that makes agent go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table. Since, the epsilon is relatively small, theoredically, 99% of the choose_action function instances are based on the above procedures. Similarly the turn ratio relative to the player's current degree (turn) is returned.
 
-The reward of actions is set as if __wall__, __-9999__; if __monster__, __-1__; if __gold__, __1__, __otherwise 0__. The q_value is updated once the next cell chosen by the choose_action algorithm is performed. As more times q_value is updated, finally it leads to the best solution.
+The reward of actions is set as if __wall__, __-9999__; if __monster__, __-1__; __if successful movement__ (from cell to cell), __+1__; if __gold__, __+1 (extra on top of the successful movement)__. The q_value is updated once the next cell chosen by the choose_action algorithm is performed. As more times q_value is updated, finally it leads to the best solution.
 
 ## Evaluation:
 __- Measurement:__
