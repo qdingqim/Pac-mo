@@ -23,7 +23,7 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 - Comparison by version: 1.6 vs. 1.4
 <br>The following graph represents the number of missions until the player reaches some solution:
 <br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/graph.png)
-<br> Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. Hence, the choose_action function revised in 1.6 has better path searching performance than the version 1.4 function.
+<br> Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. Hence, the choose_action function revised in 1.6 has better path searching performance than the function from version 1.4
 
 ## Remaining Goals and Challenges:
 - Improving Q-learing:
