@@ -11,7 +11,7 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 ## Approach:
 __- Dijkstra's Algorithm:__
-<br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm moster_action returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed that the player walk.
+<br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __moster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
    
 __- Tabular Q-learning:__
 <br>We are using Tabular Q-learing method for the player's (robot) movement.
