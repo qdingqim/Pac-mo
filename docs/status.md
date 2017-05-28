@@ -22,7 +22,7 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 - Comparison by version: 1.6 vs. 1.4
 <br>The following graph represents the number of missions until the player reaches some solution:
-<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//status_etc/graph.png)
+<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/graph.PNG)
 
 ## Remaining Goals and Challenges:
 - Improving Q-learing:
