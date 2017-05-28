@@ -10,6 +10,11 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 
 ## Approach:
+The Pac-mo is realized by multi-agent. One for the monster which implements the Dijkstra algorithm to chase the player, one for the player to perform reinforcement learning based on the Q_table to get the best reward which means maximum gold without dying, and the other one is for the watcher which is placed above the map.
+
+__- Multi-Agent:__
+<br> The multi-agent is implemented by using MalmoPython.ClientPool. Also different Xml part is coded for different agent since the placement and game mode is different. The reason why we use Multi agents is that in this case the behavior of the monster is easier to control. Also the perspective of a watcher is given.
+
 __- Dijkstra's Algorithm:__
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __moster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
    
@@ -26,12 +31,19 @@ __- Comparison by version: 1.6 vs. 1.4__
 <br> Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. Hence, the __choose_action__ function revised in 1.6 has better path searching performance than the function in version 1.4
 
 ## Remaining Goals and Challenges:
+For the challenge, it is mainly about how well the q_table would work. And except that, the remaining goal is to make the map and environment more complicated.
 __- Improving Q-learing:__
   
   We are trying to improve cases, where the q-values must be updated. Current version (1.6) Q-values are accumulated based on the success of each movement. For example, if the player succeed moving to the next cell chosen by the choose_action algorithm, the Q-value is updated with reward 1, in which its direction from the previous cell is updated. The player accumulates another 1 reward from picking up the "gold_ingot" in the game. The Q-values are decreased if and only if either the player detects the wall or the player is killed (contacted) to the monster. 
 
-  Since for most cases, the Q-table are implemented in a static enviroment.(eg lava, fixed item). However for our game, the monster follows Dijkstra to the agent which means the pattern of its movement is somehow unpredictable. In this case, q-table doesn't work perfectly well. Our next goal is to find diverse cases of the q-value update instances and improve the accuracy of the Q-table or to find a better algorithm to help the agent learn.
+  Since for most cases, the Q-table are implemented in a static enviroment.(eg lava, fixed item). However for our game, the monster follows Dijkstra to the agent which means the pattern of its movement is somehow unpredictable. In this case, q-table doesn’t work perfectly well. If we can find the only one solution to achieve the best reward without dying, the Q_learing would work perfectly well. Our next goal is to find diverse cases of the q-value update instances and improve the accuracy of the Q-table or to modify the algorithm based on current q-learning to help the agent learn.
 
 __- Make more possible paths in the map:__
   
-  Current version (1.6) has one square shape map. We are going to add more paths in between maps; test out if the player can finish the game as Q-table is accumulated.
+  Current version (1.6) has one square shape map. We are going to add more paths in between maps; test out if the player can finish the game as Q-table is accumulated.For example, we use squared with cross inside instead of a simple square. 
+  
+__- More monsters inside the map:__
+
+  Current version only has one monster agent in the map, which means the agent is less likely to die. We will try to add 1 more or 2 more monsters to see if the agent still performs good. One drawbacks of more monsters is that it is taking more resources from computer, since 3 agents are already taking almost 8G ram. This memory usage problem is probably not going to be solved.
+      
+   
