@@ -17,13 +17,13 @@ __- Multi-Agent:__
 <br> The multi-agent is implemented by using MalmoPython.ClientPool. Also different Xml part is coded for different agent since the placement and game mode is different. The reason why we use Multi agents is that in this case the behavior of the monster is easier to control. Also the perspective of a watcher is given.
 
 __- Dijkstra's Algorithm:__
-<br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __moster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
+<br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __monster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
 
 The following pictures depict the movement of the monster:
 <br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/dijk.PNG)                                              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/dijk2.PNG)
    
 __- Tabular Q-learning:__
-<br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there exits 2 possible paths anytime in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
+<br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there are 2 possible paths in most time in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
 
 The following pictures depict the reward of the wall for each situation:
 <br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)                                              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status2.png)
