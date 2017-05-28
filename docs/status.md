@@ -23,7 +23,7 @@ __- Measurement:__
 __- Comparison by version: 1.6 vs. 1.4__
 <br>The following graph represents the number of missions until the player reaches some solution:
 <br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/graph.png)
-<br> Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. Hence, the choose_action function revised in 1.6 has better path searching performance than the function from version 1.4
+<br> Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. Hence, the __choose_action__ function revised in 1.6 has better path searching performance than the function in version 1.4
 
 ## Remaining Goals and Challenges:
 __- Improving Q-learing:__
