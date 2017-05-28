@@ -20,6 +20,7 @@ __- Dijkstra's Algorithm:__
    
 __- Tabular Q-learning:__
 <br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there exits 2 possible paths anytime in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
+
 <br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)                                              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status2.png)
 
 The following code is the __choose_action__ function in PacMo version 1.6.
