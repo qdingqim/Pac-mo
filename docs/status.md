@@ -19,7 +19,10 @@ __- Dijkstra's Algorithm:__
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __moster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
    
 __- Tabular Q-learning:__
-<br>We are using Tabular Q-learing method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible states: __'north','south', 'east', 'west'__. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
+<br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. The reward of actions is set as if __wall__, __-9999__; if __monster__, __-1__; if __gold__, __1__, __otherwise 0__.We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
+
+<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)
+<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status2.png)
 The following code is the __choose_action__ function in PacMo version 1.6.
 ```python
 def choose_action(curr_coord, grid, last):
