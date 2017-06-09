@@ -162,10 +162,10 @@ def drawItems():
     #new map
     for i in [-5,-3,-1,1,3,5]:
         xml += '<DrawItem x="' + str(i) + '" y="210" z="' + str(0) + '" type="gold_ingot"/>'
-    for i in [-4,-2,2]:
+    for i in [-5,-2,2]:
         xml += '<DrawItem x="' + str(0) + '" y="210" z="' + str(i) + '" type="gold_ingot"/>'
     #new map2
-    for i in [2,4]:
+    for i in [2,5]:
         for j in [-2, 2]:
             xml += '<DrawItem x="' + str(j) + '" y="210" z="' + str(i) + '" type="gold_ingot"/>'
     return xml
@@ -203,34 +203,34 @@ def drawWalls():
 def pacmo_decorator():
     xml = ""
     #P
-    xml+= '<DrawCuboid x1="5" y1="202" z1="5" x2="5" y2="202" z2="1" type="sponge"/>'
-    xml+= '<DrawCuboid x1="4" y1="202" z1="5" x2="3" y2="202" z2="5" type="sponge"/>'
-    xml+= '<DrawCuboid x1="4" y1="202" z1="3" x2="3" y2="202" z2="3" type="sponge"/>'
-    xml+= '<DrawCuboid x1="3" y1="202" z1="4" x2="3" y2="202" z2="4" type="sponge"/>'
+    xml+= '<DrawCuboid x1="5" y1="202" z1="6" x2="5" y2="202" z2="1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="4" y1="202" z1="6" x2="3" y2="202" z2="6" type="sponge"/>'
+    xml+= '<DrawCuboid x1="4" y1="202" z1="4" x2="3" y2="202" z2="4" type="sponge"/>'
+    xml+= '<DrawCuboid x1="3" y1="202" z1="5" x2="3" y2="202" z2="5" type="sponge"/>'
     #A
-    xml+= '<DrawCuboid x1="1" y1="202" z1="5" x2="1" y2="202" z2="1" type="sponge"/>'
-    xml+= '<DrawCuboid x1="-1" y1="202" z1="5" x2="-1" y2="202" z2="1" type="sponge"/>'
-    xml+= '<DrawCuboid x1="0" y1="202" z1="5" x2="0" y2="202" z2="5" type="sponge"/>'
-    xml+= '<DrawCuboid x1="0" y1="202" z1="3" x2="0" y2="202" z2="3" type="sponge"/>'
+    xml+= '<DrawCuboid x1="1" y1="202" z1="6" x2="1" y2="202" z2="1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-1" y1="202" z1="6" x2="-1" y2="202" z2="1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="0" y1="202" z1="6" x2="0" y2="202" z2="6" type="sponge"/>'
+    xml+= '<DrawCuboid x1="0" y1="202" z1="4" x2="0" y2="202" z2="4" type="sponge"/>'
     #C
-    xml+= '<DrawCuboid x1="-3" y1="202" z1="5" x2="-3" y2="202" z2="1" type="sponge"/>'
-    xml+= '<DrawCuboid x1="-5" y1="202" z1="5" x2="-4" y2="202" z2="5" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-3" y1="202" z1="6" x2="-3" y2="202" z2="1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-5" y1="202" z1="6" x2="-4" y2="202" z2="6" type="sponge"/>'
     xml+= '<DrawCuboid x1="-5" y1="202" z1="1" x2="-4" y2="202" z2="1" type="sponge"/>'
     #M
-    xml+= '<DrawCuboid x1="5" y1="202" z1="-5" x2="5" y2="202" z2="-1" type="sponge"/>'
-    xml+= '<DrawCuboid x1="3" y1="202" z1="-5" x2="3" y2="202" z2="-1" type="sponge"/>'
-    xml+= '<DrawCuboid x1="1" y1="202" z1="-5" x2="1" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="5" y1="202" z1="-6" x2="5" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="3" y1="202" z1="-6" x2="3" y2="202" z2="-1" type="sponge"/>'
+    xml+= '<DrawCuboid x1="1" y1="202" z1="-6" x2="1" y2="202" z2="-1" type="sponge"/>'
     xml+= '<DrawCuboid x1="1" y1="202" z1="-1" x2="5" y2="202" z2="-1" type="sponge"/>'
     #O
     xml+= '<DrawCuboid x1="-1" y1="202" z1="-5" x2="-1" y2="202" z2="-1" type="sponge"/>'
     xml+= '<DrawCuboid x1="-5" y1="202" z1="-5" x2="-5" y2="202" z2="-1" type="sponge"/>'
     xml+= '<DrawCuboid x1="-1" y1="202" z1="-1" x2="-5" y2="202" z2="-1" type="sponge"/>'
-    xml+= '<DrawCuboid x1="-1" y1="202" z1="-5" x2="-5" y2="202" z2="-5" type="sponge"/>'
+    xml+= '<DrawCuboid x1="-1" y1="202" z1="-6" x2="-5" y2="202" z2="-6" type="sponge"/>'
     #new map
     xml+='<DrawCuboid x1="-6" y1="202" z1="0" x2="6" y2="202" z2="0" type="air"/>'
-    xml+='<DrawCuboid x1="0" y1="202" z1="-6" x2="0" y2="202" z2="2" type="air"/>'
+    xml+='<DrawCuboid x1="0" y1="202" z1="-6" x2="0" y2="202" z2="3" type="air"/>'
     xml+='<DrawCuboid x1="-6" y1="201" z1="0" x2="6" y2="201" z2="0" type="coal_block"/>'
-    xml+='<DrawCuboid x1="0" y1="201" z1="-6" x2="0" y2="201" z2="2" type="coal_block"/>'
+    xml+='<DrawCuboid x1="0" y1="201" z1="-6" x2="0" y2="201" z2="3" type="coal_block"/>'
     #new map2
     xml+='<DrawCuboid x1="2" y1="202" z1="1" x2="2" y2="202" z2="6" type="air"/>'
     xml+='<DrawCuboid x1="-2" y1="202" z1="1" x2="-2" y2="202" z2="6" type="air"/>'
