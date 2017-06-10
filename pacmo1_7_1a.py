@@ -1,5 +1,5 @@
 """
-CS 175 Group 17 Project Pac-mo Version 1.7.1
+CS 175 Group 17 Project Pac-mo Version 1.7.1a
 Pacmo is trying to get the most gold bars from the moster pool
 Code structures based on the two assignments and multi_agent_test.py
 
