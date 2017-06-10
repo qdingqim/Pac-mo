@@ -1,5 +1,5 @@
 """
-CS 175 Group 17 Project Pac-mo Version 1.7.1
+CS 175 Group 17 Project Pac-mo Version 1.7.1b
 Pacmo is trying to get the most gold bars from the moster pool
 Code structures based on the two assignments and multi_agent_test.py
 
@@ -89,7 +89,7 @@ from priority_dict import priorityDictionary as PQ
 from collections import namedtuple, defaultdict
 from operator import add
 import Tkinter as tk
-expID = 'Pac_mo_1_7_1a'
+expID = 'Pac_mo_1_7_1b'
 
 EntityInfo = namedtuple('EntityInfo', 'x, y, z, yaw, pitch, name, colour, variation, quantity')
 EntityInfo.__new__.__defaults__ = (0, 0, 0, 0, 0, "", "", "", 1)
