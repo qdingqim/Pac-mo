@@ -25,7 +25,8 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 
 ## References:
-- 1....:
-- 2.....:
-- 3.....:
+- __The original Pac-man game__:https://www.google.com/search?q=pacman&rlz=1C1CHZL_zh-CNUS736US736&oq=pacman&aqs=chrome..69i57j0j69i59l2j0l2.3004j0j8&sourceid=chrome&ie=UTF-8#clb=clb
+- __Q_learning Algorithm in Discussion__:https://github.com/MosheLichman/CS175-Discussions
+- __Malmo Minecraft setup__:https://github.com/Microsoft/malmo
+- __Multi Agent__:https://github.com/Microsoft/malmo/blob/master/Malmo/samples/Python_examples/multi_agent_test.py
 
