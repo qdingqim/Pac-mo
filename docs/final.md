@@ -21,7 +21,7 @@ The biggest chanllenge for surviving the pac-man using q_learning is the time de
 
 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/easy_map.png)                                                 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)  ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)  ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/hard_map.png)  
 
-Easy Map![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)  ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)Hard Map
+Easy Map![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)                                                ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)  Hard Map
 
 ## Approaches:
 
