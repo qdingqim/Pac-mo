@@ -24,6 +24,15 @@ The biggest chanllenge for surviving the pac-man using q_learning is the time de
 
 ## Approaches:
 
+### Muti-Agent
+<br> The multi-agent is implemented by using MalmoPython.ClientPool. Also different Xml part is coded for different agent since the placement and game mode is different. The reason why we use Multi agents is that in this case the behavior of the monster is easier to control. Also the perspective of a watcher is given.
+
+### Dijkstra's Algorithm
+<br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __monster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
+
+### Tabular Q-learning
+
+### Consistency Check
 
 
 ## Evaluation:
