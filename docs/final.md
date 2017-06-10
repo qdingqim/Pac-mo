@@ -25,5 +25,7 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 
 ## References:
-
+- 1....:
+- 2.....:
+- 3.....:
 
