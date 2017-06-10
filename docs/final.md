@@ -19,8 +19,7 @@ The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; 
 
 The biggest chanllenge for surviving the pac-man using q_learning is the time dependency. Since the agent might visit the same cell several times in one episode, and once the q_value for the cell is updated(for example ,the agent encounter the monster), this cell would never be visited. However, if the q_value of one cell is updated several times in one episode, the q_table would not be accurate enough for the following episodes. Therefore consistency check must be added.
 
-![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)  
-![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)  
+![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)  
 
 ## Approaches:
 
