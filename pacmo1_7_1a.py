@@ -415,6 +415,7 @@ n = 2
 fs_appeared_at = -1 # first solution appeared at which state?
 fs_appeared = False
 best_action_list = []
+best_policy_at = -1
 
 class q_draw:
     def __init__(self, canvas=None, root=None):
@@ -853,9 +854,11 @@ for mission_no in xrange(1, num_missions+1):
                     if fs_appeared == True:
                         if len(best_action_list) > len(current_policy):
                             best_action_list = current_policy
+                            best_policy_at = mission_no
                     else:
                         fs_appeared_at = mission_no
                         best_action_list = current_policy
+                        best_policy_at = mission_no
 
                     fs_appeared = end_mission(agent_hosts, False, last)
                     break
@@ -925,6 +928,10 @@ for mission_no in xrange(1, num_missions+1):
     print "Current Action List:", current_policy
     print "========================================="
     print
-    if fs_appeared: print "Best Action List", best_action_list
+    if fs_appeared: 
+        print "Best Policy At:", best_policy_at
+        print "Best Number of Steps:", len(best_action_list)
+        print "Best Action List", best_action_list
+        
     time.sleep(2)
 
