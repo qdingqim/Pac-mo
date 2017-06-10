@@ -38,8 +38,9 @@ The multi-agent is implemented by using MalmoPython.ClientPool. Also different X
 ### Tabular Q-learning
 
 ### Consistency Check
+The reason why we are using consistency check is to ensure the agent is not trapped by negative rewards so that the q value can be updated. Since if the agent meets a monster somewhere, there would be a negative q_value in that cell, which makes an obstacle for agent. However, there might be an another moment where monster is actually far away from this cell, while the agent is still afraid to cross the cell due to the negative q_value, which makes the agent kind of "stupid". 
 
-
+![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)   ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/meet.png)                                                 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/no_meet.png)  
 ## Evaluation:
 
 
