@@ -13,9 +13,11 @@ title: Final Report
 
 ## Project Summary:
 
-Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Bandai Namco Games. The AI of Pac-Mo will be developed based on Minecraft Malmo. The player is named after 'Robot'. The goal of this game is to get the highest score from each stage, while the agent should avoid a monster in the closed map(17 by 17 for now) that kills the player at once if contacted. The dots, which gives a score in the original game, will be replaced by the 'gold_ingot' in Minecraft.
+Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Bandai Namco Games. The AI of Pac-Mo will be developed based on Minecraft Malmo. The player is named after 'Robot'. The goal of this game is to get the highest score from each stage, while the agent should avoid a monster in the closed map (two versions: easy map and hard map) that kills the player at once if contacted. The dots, which gives a score in the original game, will be replaced by the 'gold_ingot' in Minecraft.
 
 The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; it is controlled by another client and its ability to chase the player is driven finding the shortest path from each monster to the player for each movement of the player. To give a full perspective of the map, a client of a watcher is added as well. The input for the agent will be an information of visible grid cell, such as vertically or horizontally reachable cells from current cell not blocked by walls or monsters. Then the agent will determine its best direction to obtain more "gold_ingot" and not to be killed by the monsters.
+
+The biggest chanllenge for surviving the pac-man using q_learning is the timeline. Since the agent might visit the same cell several times in one episode, and once the q_value for the cell is updated(for example ,the agent encounter the monster, it is updated to -1), this cell would never be visited. However, if the q_value of one cell is updated several times in one episode, the q_table would not be accurate enough for the following episodes. Therefore satisfactory constraints must be added.
 
 ## Approaches:
 
