@@ -81,7 +81,7 @@ Therefore we are detecting the distance between the monster and the player every
 
 __- Avoiding the monster:__
 
-At the same time, by detecting the distance between player and monster, the player tries to turn around before it was caught by the monster. This is because we do not want the mission start again and again. Because after the agent get the gold in the cell, there is no more reward when the second time agent get there. If the player dies, then the gold would be reset, which makes the q_value for the cell accumulate extreme high and makes q_table not accurate. Therefore avoiding players die can actually improve Q_learning in some extent.
+At the same time, by detecting the distance between player and monster, the player tries to turn around before it was caught by the monster. This is because we do not want the mission start again and again. Because after the agent get the gold in the cell, there is no more gold reward when the second time agent get there. If the player dies, then the gold would be reset, which makes the q_value for the cell accumulate extreme high and makes q_table not accurate. Therefore avoiding players die can actually improve Q_learning in some extent.
 
 <div style="text-align:center"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/avoid.png" /></div>
 
