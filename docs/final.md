@@ -23,6 +23,9 @@ The biggest chanllenge for surviving the pac-man using q_learning is the time de
 
 
 ## Approaches:
+The Pac-mo uses multi-agent Minecrafts. One for the monster, which implements the Dijkstra algorithm to chase the player, one for the player to perform reinforcement learning based on the Q_table to get the best reward which means maximum gold_ingot without death, and one for the observer which is placed above the map.
+
+Compared to status report, There are a hard mode map and an easy mode map. Also as mentioned in the challenges part in status report, since the monster is using dijkstra algorithm which means its behaviour hard to predict, the Q_learning does not work perfectly well. To improve the Q_learning algorithm, the consistency check is implemented to help the q_learning update better. One more thing we improved is that we change the continuous movement to discrete movement for the player so that the movement is more accurate to fit the hard mode map. 
 
 ### Muti-Agent
 The multi-agent is implemented by using MalmoPython.ClientPool. Also different Xml part is coded for different agent since the placement and game mode is different. The reason why we use Multi agents is that in this case the behavior of the monster is easier to implement Dijkstra's algorithm, which also makes monster more smarter and more difficult for AI to win the pac-man game! The perspective of a watcher is given by another client, which makes it easier to observe. However, too man clients indeed takes too much RAM and resources, which sometimes makes the turning of the agent delay.
@@ -34,7 +37,10 @@ The multi-agent is implemented by using MalmoPython.ClientPool. Also different X
 
 ### Dijkstra's Algorithm
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __monster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
+```python
+###  pseudocode for Dijkstra's Algorithm
 
+```
 ### Tabular Q-learning
 <br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there are 2 possible paths in most time in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
 
