@@ -8,7 +8,7 @@ title: Final Report
 
 ## Video!
 <div id="video_frame">
-  <iframe src="https://youtu.be/MhQKe-aERsU" frameborder="0" allowfullscreen></iframe>
+  <iframe src="https://youtu.be/embed/MhQKe-aERsU" frameborder="0" allowfullscreen></iframe>
 </div>
 
 ## Project Summary:
