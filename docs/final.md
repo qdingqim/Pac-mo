@@ -3,12 +3,11 @@ layout: default
 title: Final Report
 ---
 
-# Final Report ! [Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/timg.gif)
+# Final Report !  [Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/timg.gif)
 
 
 ## Video!
 
-<div id="video_frame"><iframe src="https://www.youtube.com/watch?v=Hv5hxaQzAds" frameborder="0" allowfullscreen></iframe></div>
 
 ## Project Summary:
 
