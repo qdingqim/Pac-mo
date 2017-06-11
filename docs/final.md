@@ -69,7 +69,7 @@ The following code is a part of updating q table function:
 The reward of actions is set as if __wall__, __-9999__; if __monster__, __-1__; __if successful movement__ (from cell to cell), __+1__; if __gold__, __+1 (extra on top of the successful movement)__. The q_value is updated once the next cell chosen by the choose_action algorithm is performed. As more times q_value is updated, finally it leads to the best solution.
 
 q_table example:
-<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)    ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/q_capture.PNG)                                                 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/q_capture2.png) 
+<br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)    ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/q_capture.PNG)                                                 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/q_capture2.png) 
 
 ### Consistency Check
 The reason why we are using consistency check is to ensure the agent is not trapped by negative rewards so that the q value can be updated. Since if the agent meets a monster somewhere, there would be a negative q_value in that cell, which makes an obstacle for agent. However, there might be an another moment where monster is actually far away from this cell, while the agent is still afraid to cross the cell due to the negative q_value, which makes the agent kind of "stupid". We call it time dependency here.
