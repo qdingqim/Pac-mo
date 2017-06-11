@@ -85,6 +85,7 @@ At the same time, by detecting the distance between player and monster, the play
 
 <div style="text-align:center"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/avoid.png" /></div>
 
+
 ```python
 #### pseudocode for consistency check
 
