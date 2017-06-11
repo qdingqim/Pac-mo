@@ -92,6 +92,7 @@ __- Measurement:__
 
 __- Comparison between different versions__
 <br>The following graph represents the number of missions until the player reaches the first solution:
+
 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/graph_final.png)
 
 Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. After adding the consistency check as version 1.8, the performance is even better. It achieves the best solution within 1-5 missions. Hence, the __choose_action__ function revised in 1.6 and the __consistency check__ in 1.8 has better learning performance than the original version.
