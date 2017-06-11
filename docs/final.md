@@ -103,6 +103,8 @@ We record the number of episodes that the best solution is reached, and the time
 
 The best solution reached within the shortest time is the 79th episode. However, the following episodes do not neccesarily do better than the 79th episode. We in total have 63×2×2 states in hard mode map (52×2×2 states in easy mode map) which is already a huge number. It would take huge number of runs to reach the stable q_table, which makes the performance seem unstable.
 
+We also see in the figure that the times of best solution reached between round 1-100 and 100-200 is 4. And in round 200-300 is 7. However reduces to 4 times in round 300-400, not a rising trend as we expected. That may because the experiments are not enough or the states 52X2X2 is so large, which is a limitation of Q-learning.
+
 ### Qualitative
 __- Measurement:__
 <br>Current evaluation process is based on the number of steps and the number of missions until the player (Robot) reaches to the solution. The term solution is not the best solution yet; in fact, finding the best solution is not trivial since the game have moving monster that is chasing after the player. __Hence, we decided to compare the number of missions until some solution for each game in the different versions.__ Current version(1.8) has a range of 1-5 missions to some solution; interestingly, most solutions had 163 turns (in easy mode map) until the end of the game (solution state).
