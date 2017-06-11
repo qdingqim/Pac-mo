@@ -87,10 +87,14 @@ Therefore we are detecting the distance between the monster and the player every
 
 
 ### Qualitative
+__- Measurement:__
+<br>Current evaluation process is based on the number of steps and the number of missions until the player (Robot) reaches to the solution. The term solution is not the best solution yet; in fact, finding the best solution is not trivial since the game have moving monster that is chasing after the player. __Hence, we decided to compare the number of missions until some solution for each game in the different versions.__ Current version(1.8) has a range of 1-5 missions to some solution; interestingly, most solutions had 163 turns (in easy mode map) until the end of the game (solution state).
 
-__ - Compariosn between different versions __
-
+__- Comparison between different versions__
+<br>The following graph represents the number of missions until the player reaches the first solution:
 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/graph_final.png)
+
+Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. After adding the consistency check as version 1.8, the performance is even better. It achieves the best solution within 1-5 missions. Hence, the __choose_action__ function revised in 1.6 and the ————————__consistency check__ in 1.8 has better learning performance than the original version.
 
 ## References:
 - __The original Pac-man game__:  <https://www.google.com/search?q=pacman&rlz=1C1CHZL_zh-CNUS736US736&oq=pacman&aqs=chrome..69i57j0j69i59l2j0l2.3004j0j8&sourceid=chrome&ie=UTF-8#clb=clb>
