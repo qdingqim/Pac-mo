@@ -7,10 +7,9 @@ title: Final Report
 
 
 ## Video!
-<div id="video_frame">
-  <iframe src="https://www.youtube.com/embed/2fIlT_IfTBQ" frameborder="0" allowfullscreen></iframe>
-</div>
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/2fIlT_IfTBQ" frameborder="0" allowfullscreen></iframe>
+
 ## Project Summary:
 
 Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Bandai Namco Games. The AI of Pac-Mo will be developed based on Minecraft Malmo. The player is named after 'Robot'. The goal of this game is to get the highest score from each stage, while the agent should avoid a monster in the closed map (two versions: easy map and hard map) that kills the player at once if contacted. The dots, which gives a score in the original game, will be replaced by the 'gold_ingot' in Minecraft.
