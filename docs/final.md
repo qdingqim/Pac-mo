@@ -37,10 +37,9 @@ The multi-agent is implemented by using MalmoPython.ClientPool. Also different X
 
 ### Dijkstra's Algorithm
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __monster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
-```python
-###  pseudocode for Dijkstra's Algorithm
 
-```
+ ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/dij.png)
+ 
 ### Tabular Q-learning
 <br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there are 2 possible paths in most time in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
 
@@ -84,6 +83,10 @@ Therefore we are detecting the distance between the monster and the player every
 ```
 ## Evaluation:
 
+### Quantitative 
+
+
+### Qualitative
 
 ## References:
 - __The original Pac-man game__:  <https://www.google.com/search?q=pacman&rlz=1C1CHZL_zh-CNUS736US736&oq=pacman&aqs=chrome..69i57j0j69i59l2j0l2.3004j0j8&sourceid=chrome&ie=UTF-8#clb=clb>
