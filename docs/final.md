@@ -3,7 +3,7 @@ layout: default
 title: Final Report
 ---
 
-# Final Report !  [Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/timg.gif)
+# Final Report  ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/timg.gif)
 
 
 ## Video!
