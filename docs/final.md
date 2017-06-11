@@ -72,6 +72,7 @@ q_table example:
 
 ### Consistency Check
 __- Force Going:__
+
 The reason why we are using consistency check is to ensure the agent is not trapped by negative rewards so that the q value can be updated. Since if the agent meets a monster somewhere, there would be a negative q_value in that cell, which makes an obstacle for agent. However, there might be an another moment where monster is actually far away from this cell, while the agent is still afraid to cross the cell due to the negative q_value, which makes the agent kind of "stupid". We call it time dependency here.
 
 Therefore we are detecting the distance between the monster and the player every movement. If the distance between the monster and the player is not the safe distance, then the agent turns around to avoid the monster; meanwhile the q_value got updated. However sometimes this q_value is not reliable because of time dependency. Therefore we are detecting the distance between players and monsters all the time: if agent is facing the monster, he turns around and q_value get updated; if the cell in front of the agent has negative value, while there actually is no monster in front of him, the agent still goes forward so that the q_value of the following cell's could be updated.
