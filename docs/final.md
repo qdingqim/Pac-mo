@@ -96,8 +96,9 @@ At the same time, by detecting the distance between player and monster, the play
 
 We record the number of episodes that the best solution is reached, and the time to reach each best solution as below. The shorter time surely means better performance. The performance is defined as the reciprocal of the time spent times 100. 
 
-![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)    ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/timeround.png)                                                 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/perfround.png)
+<div style="text-align:center"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/timeround.png" /></div>
 
+<div style="text-align:center"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/perfround.png" /></div>
 
 The best solution reached within the shortest time is the 79th episode. However, the following episodes do not neccesarily do better than the 79th episode. We in total have 52×2×2 states(in easy mode map) which is already a huge number. It would take huge number of runs to reach the stable q_table, which makes the performance seem unstable.
 
