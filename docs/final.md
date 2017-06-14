@@ -16,15 +16,17 @@ Project Pac-Mo is an AI agent that plays a modified version of the Pac-Man by Ba
 
 The monster in Pac-Mo, unlike the original game, cannot be eaten by the player; it is controlled by another client and its ability to chase the player is driven finding the shortest path from each monster to the player for each movement of the player. To give a full perspective of the map, a client of a watcher is added as well. The input for the agent will be an information of visible grid cell, such as vertically or horizontally reachable cells from current cell not blocked by walls or monsters. Then the agent will determine its best direction to obtain more "gold_ingot" and not to be killed by the monsters.
 
-The biggest challenge for surviving the pac-man using q_learning is the time dependency. Since the agent might visit the same cell several times in one episode, and once the q_value for the cell is updated(for example ,the agent encounter the monster), this cell would never be visited. However, if the q_value of one cell is updated several times in one episode, the q_table would not be accurate enough for the following episodes. Meanwhile, the monster is always following the shortest path to the player, which makes the monster smarter compared to normal zombie. Therefore some modification on Q_learning should be made(e.g. consistency check).
+The biggest challenge for surviving the pac-man using q_learning is the time dependency for each state. Since the agent might visit the same cell several times in one episode, and once the q_value for each visited cell is updated(for example, the agent encountering the monster), this cell might never be visited. However, if the q_value of one cell is updated several times in one episode, the q_table would not be accurate enough for the following episodes. Meanwhile, the monster is always following the shortest path to the player, which makes the monster smarter compared to normal zombie. Therefore some modification on Q_learning should be made(e.g. consistency check).
 
 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)   ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/easy_map.png)                                                 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/hard_map.png)  
 
+## Current Version
+1.8
 
 ## Approaches:
-The Pac-mo uses multi-agent Minecrafts. One for the monster, which implements the Dijkstra algorithm to chase the player, one for the player to perform reinforcement learning based on the Q_table to get the best reward which means maximum gold_ingot without death, and one for the observer which is placed above the map.
+The Pac-mo uses multi-agent Minecrafts. One for the monster, which implements the Dijkstra algorithm to chase the player, one for the player to perform reinforcement learning based on the Q_table and additional Consistency Check features to get the best reward which aims to acquire maximum gold_ingots for each level of the map without death, and one for the observer which is placed above the map.
 
-Compared to status report, There are a hard mode map and an easy mode map. Also as mentioned in the challenges part in status report, since the monster is using dijkstra algorithm which means its behaviour hard to predict, the Q_learning does not work perfectly well. To improve the Q_learning algorithm, the consistency check is implemented to help the q_learning update better. One more thing we improved is that we change the continuous movement to discrete movement for the player so that the movement is more accurate to fit the hard mode map. 
+Compared to status report, There are a hard mode map and an easy mode map. Also as mentioned in the challenges part in status report, since the monster is using dijkstra algorithm which means its behaviour hard to predict, the Q_learning does not work perfectly well. To improve the Q_learning algorithm, the consistency check is implemented to help the q_learning update better. One more thing we have improved is that we changed the continuous movement to discrete movement for the player so that the movement is more accurate to fit the hard mode map, as well as the easy level map from the previous versions. 
 
 ### Muti-Agent
 The multi-agent is implemented by using MalmoPython.ClientPool. Also different Xml part is coded for different agent since the placement and game mode is different. The reason why we use Multi agents is that in this case the behavior of the monster is easier to implement Dijkstra's algorithm, which also makes monster more smarter and more difficult for AI to win the pac-man game! The perspective of a watcher is given by another client, which makes it easier to observe. However, too man clients indeed takes too much RAM and resources, which sometimes makes the turning of the agent delay.
@@ -47,9 +49,20 @@ The following pictures depict the reward of the wall for each situation:
 
 Notice that the reward of the wall is -9,999; that score forces the player not to walk through the wall.
 
-The following code is the __choose_action__ function in PacMo version 1.6.
+Conceptual implementation of __choose_action__ function in PacMo version 1.8.
 ```python
 ###  pseudocode for choosing action
+1. get possible_actions at current cell
+2. add to q table if never visited
+3. (Consistency Check 1) detect if monster is near by
+       remove the direction to the monster's location if it is in the possible_actions
+4. (Consistency Check 2) if path is straight 
+   and q value of last direction on last cell
+   and current cell with the same direction is >= 0:
+       go straight
+5. if step 4 never happened,
+   for 1% of chance, randomly select the next directoin
+   for 99% of chance, select the direction with maximum value
 ```
 Notice in the middle of the code, there is a statement that makes agent go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table. Since, the epsilon is relatively small, theoredically, 99% of the choose_action function instances are based on the above procedures. Similarly the turn ratio relative to the player's current degree (turn) is returned.
 
