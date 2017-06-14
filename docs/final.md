@@ -99,7 +99,7 @@ We record the number of episodes that the best solution is reached, and the time
 
 <div style="text-align:center"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/perfround.png" /></div>
 
-The best solution reached within the shortest time is the 79th episode. However, the following episodes do not neccesarily do better than the 79th episode. We in total have 63×2×2 states in hard mode map (52×2×2 states in easy mode map) which is already a huge number. It would take huge number of runs to reach the stable q_table, which makes the performance seem unstable.
+The best solution reached within the shortest time is the 104th episode. However, the following episodes do not neccesarily do better than the 104th episode. We in total have 63×2×2 states in hard mode map (52×2×2 states in easy mode map) which is already a huge number. It would take huge number of runs to reach the stable q_table, which makes the performance seem unstable.
 
 We also see in the figure that the times of best solution reached between round 1-100 and 100-200 is 4. And in round 200-300 is 7. However reduces to 4 times in round 300-400, not a rising trend as we expected. That may because the experiments are not enough or the states 52X2X2 is so large, which is a limitation of Q-learning.
 
