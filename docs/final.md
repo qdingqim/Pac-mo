@@ -40,6 +40,7 @@ The multi-agent is implemented by using MalmoPython.ClientPool. Also different X
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __monster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
 
 ```python
+### pseudo code for Dijkstra's Algorithm
     dist (distance)
     prev (previous node)
     pq (priority queue)
