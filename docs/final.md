@@ -104,8 +104,7 @@ The reason why we are using consistency check is to ensure that the agent is not
 
 Therefore, the statement forces the agent to go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table or select some random path.
 
-
-|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/non_meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/forcego.png)|
+|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/meet.png)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/non_meet.png)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/forcego.png)|
 ```python
 #### Forced straight movement in choose_action function
   if the player is on the straight path:
