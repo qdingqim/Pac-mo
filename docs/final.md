@@ -78,9 +78,9 @@ Therefore we are detecting the distance between the monster and the player every
 |![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/non_meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/forcego.png)|
 ```python
 #### Forced straight movement in choose_action function
-if the player is on the straight path:
-if q value of last direction from last cell and q value of last direction from current cell:
-go straight with last direction
+  if the player is on the straight path:
+      if q value of last direction from last cell and q value of last direction from current cell:
+          go straight with last direction
 ```
 __- Avoiding the monster:__
 
@@ -92,9 +92,9 @@ At the same time, by detecting the distance between player and monster, the play
 ```python
 #### avoiding the monster in choose_action function
   if the mosters is at the players adjacent cell:
-  set the direction to that cell as impossible_action.
+      set the direction to that cell as impossible_action.
   if possible_actions contains impossible_action:
-  remove impossible_action (direction) from possible_actions.
+      remove impossible_action (direction) from possible_actions.
 ```
 ## Evaluation:
 
