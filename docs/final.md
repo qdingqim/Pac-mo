@@ -8,7 +8,7 @@ title: Final Report
 
 ## Video!
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/2fIlT_IfTBQ" frameborder="0" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://youtu.be/oc1JfCrMBqc" frameborder="0" allowfullscreen></iframe>
 
 ## Project Summary:
 
@@ -69,14 +69,19 @@ q_table example:
 <br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)    ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/q_capture.PNG)                                                 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/q_capture2.png) 
 
 ### Consistency Check
-__- Force Going:__
+__- Forced Straight Movement:__
 
 The reason why we are using consistency check is to ensure the agent is not trapped by negative rewards so that the q value can be updated. Since if the agent meets a monster somewhere, there would be a negative q_value in that cell, which makes an obstacle for agent. However, there might be an another moment where monster is actually far away from this cell, while the agent is still afraid to cross the cell due to the negative q_value, which makes the agent kind of "stupid". We call it time dependency here.
 
 Therefore we are detecting the distance between the monster and the player every movement. If the distance between the monster and the player is not the safe distance, then the agent turns around to avoid the monster; meanwhile the q_value got updated. However sometimes this q_value is not reliable because of time dependency. Therefore we are detecting the distance between players and monsters all the time: if agent is facing the monster, he turns around; if the cell in front of the agent has negative value, while there actually is no monster in front of him, the agent still goes forward so that the q_value of the following cell's could be updated.
 
 |![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/non_meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/forcego.png)|
-
+```python
+#### Forced straight movement in choose_action function
+if the player is on the straight path:
+if q value of last direction from last cell and q value of last direction from current cell:
+go straight with last direction
+```
 __- Avoiding the monster:__
 
 At the same time, by detecting the distance between player and monster, the player tries to turn around before it was caught by the monster. This is because we do not want the mission start again and again. Because after the agent get the gold in the cell, there is no more gold reward when the second time agent get there. If the player dies, then the gold would be reset, which makes the q_value for the cell accumulate extreme high and makes q_table not accurate. Therefore avoiding players die can actually improve Q_learning in some extent.
@@ -85,8 +90,11 @@ At the same time, by detecting the distance between player and monster, the play
 
 
 ```python
-#### pseudocode for consistency check
-
+#### avoiding the monster in choose_action function
+  if the mosters is at the players adjacent cell:
+  set the direction to that cell as impossible_action.
+  if possible_actions contains impossible_action:
+  remove impossible_action (direction) from possible_actions.
 ```
 ## Evaluation:
 
