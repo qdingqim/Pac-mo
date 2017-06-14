@@ -39,5 +39,5 @@ __Introduction:__
 <br><br>__The Final:__
 <iframe width="560" height="315" src="https://www.youtube.com/embed/oc1JfCrMBqc" frameborder="0" allowfullscreen></iframe>
 <br><br>[Latest Source_Code:checkout! (easy)](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_8a.py)
-[Latest Source_Code:checkout! (hard)](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_8b.py)
+<br>[Latest Source_Code:checkout! (hard)](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_8b.py)
 <br>[Old version Source_Code:checkout!](https://github.com/qdingqim/Pac-mo)
