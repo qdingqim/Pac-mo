@@ -50,7 +50,6 @@ Notice that the reward of the wall is -9,999; that score forces the player not t
 The following code is the __choose_action__ function in PacMo version 1.6.
 ```python
 ###  pseudocode for choosing action
-
 ```
 Notice in the middle of the code, there is a statement that makes agent go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table. Since, the epsilon is relatively small, theoredically, 99% of the choose_action function instances are based on the above procedures. Similarly the turn ratio relative to the player's current degree (turn) is returned.
 
