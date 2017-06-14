@@ -56,7 +56,7 @@ The multi-agent is implemented by using MalmoPython.ClientPool. Also different X
 ```
 
 ### Tabular Q-learning
-<br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there are 2 possible paths in most time in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
+<br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there are 2 possible paths in most time in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2. Alpha is gradually decreased after first mission (rate of 0.000001).
 
 The following pictures depict the reward of the wall for each situation:
 <br>![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status1.png)                                              ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/status2.png)
@@ -78,7 +78,8 @@ Conceptual implementation of __choose_action__ function in PacMo version 1.8.
    for 1% of chance, randomly select the next directoin
    for 99% of chance, select the direction with maximum value
 ```
-Notice in the middle of the code, there is a statement that makes agent go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table. Since, the epsilon is relatively small, theoredically, 99% of the choose_action function instances are based on the above procedures. Similarly the turn ratio relative to the player's current degree (turn) is returned.
+
+Notice there are two consistency check procedures. These are explained at __Consistency Check__ part. Notice in the middle of the code, there is a statement that makes agent go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table. Since, the epsilon is relatively small, theoredically, 99% of the choose_action function instances are based on the above procedures. Similarly the turn ratio relative to the player's current degree (turn) is returned.
 
 The following code is a part of updating q table function:
 ```python
@@ -98,9 +99,9 @@ q_table example:
 ### Consistency Check
 __- Forced Straight Movement:__
 
-The reason why we are using consistency check is to ensure the agent is not trapped by negative rewards so that the q value can be updated. Since if the agent meets a monster somewhere, there would be a negative q_value in that cell, which makes an obstacle for agent. However, there might be an another moment where monster is actually far away from this cell, while the agent is still afraid to cross the cell due to the negative q_value, which makes the agent kind of "stupid". We call it time dependency here.
+The reason why we are using consistency check is to ensure that the agent is not trapped by negative rewards so that the q value can be updated. Since if the agent meets a monster somewhere, there would be a negative q_value in that cell, which makes an obstacle for agent. However, there might be an another moment where monster is actually far away from this cell, while the agent is still afraid to cross the cell due to the negative q_value, which makes the agent kind of "stupid". We call it time dependency here.
 
-Therefore we are detecting the distance between the monster and the player every movement. If the distance between the monster and the player is not the safe distance, then the agent turns around to avoid the monster; meanwhile the q_value got updated. However sometimes this q_value is not reliable because of time dependency. Therefore we are detecting the distance between players and monsters all the time: if agent is facing the monster, he turns around; if the cell in front of the agent has negative value, while there actually is no monster in front of him, the agent still goes forward so that the q_value of the following cell's could be updated.
+Therefore we are detecting the distance between the monster and the player every movement. If the distance between the monster and the player is not the safe distance, then the agent turns around to avoid the monster. However sometimes this q_value is not reliable because of time dependency. Therefore we are detecting the distance between players and monsters all the time: if agent is facing the monster, he turns around; if the cell in front of the agent has negative value, while there actually is no monster in front of him, the agent still goes forward so that the q_value of the following cell's could be updated.
 
 |![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/non_meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/forcego.png)|
 ```python
@@ -111,7 +112,7 @@ Therefore we are detecting the distance between the monster and the player every
 ```
 __- Avoiding the monster:__
 
-At the same time, by detecting the distance between player and monster, the player tries to turn around before it was caught by the monster. This is because we do not want the mission start again and again. Because after the agent get the gold in the cell, there is no more gold reward when the second time agent get there. If the player dies, then the gold would be reset, which makes the q_value for the cell accumulate extreme high and makes q_table not accurate. Therefore avoiding players die can actually improve Q_learning in some extent.
+At the same time, by detecting the distance between player and monster, the player tries to turn around before it was caught by the monster. This is because we do not want the mission to restart repeatedly. After resetting the map, the number of golds would be reset, which makes the q_value for the cell accumulate extreme high and makes q_table not accurate. Therefore avoiding players from death can actually improve Q_learning in some extent.
 
 <div style="text-align:center"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/avoid.png" /></div>
 
@@ -135,18 +136,18 @@ We record the number of episodes that the best solution is reached, and the time
 
 The best solution reached within the shortest time is the 104th episode. However, the following episodes do not neccesarily do better than the 104th episode. We in total have 63×2×2 states in hard mode map (52×2×2 states in easy mode map) which is already a huge number. It would take huge number of runs to reach the stable q_table, which makes the performance seem unstable.
 
-We also see in the figure that the times of best solution reached between round 1-100 and 100-200 is 4. And in round 200-300 is 7. However reduces to 4 times in round 300-400, not a rising trend as we expected. That may because the experiments are not enough or the states 52X2X2 is so large, which is a limitation of Q-learning.
+We also see in the figure that the times of best solution reached between round 1-100 and 100-200 is 4. And in round 200-300 is 7. However reduces to 4 times in round 300-400, not a rising trend as we expected. That may because the experiments are not enough or the states 63x2x2 is so large, which is a limitation of Q-learning.
 
 ### Qualitative
 __- Measurement:__
-<br>Current evaluation process is based on the number of steps and the number of missions until the player (Robot) reaches to the solution. The term solution is not the best solution yet; in fact, finding the best solution is not trivial since the game have moving monster that is chasing after the player. __Hence, we decided to compare the number of missions until some solution for each game in the different versions.__ Current version(1.8) has a range of 1-5 missions to some solution; interestingly, most solutions had 163 turns (in easy mode map) until the end of the game (solution state).
+<br>Current evaluation process is based on the number of steps, the number of missions until the player (Robot) reaches to the solution, and the time to reach some solution. The term solution is not the best solution yet; in fact, finding the best solution is not trivial since the game have moving monster that is chasing after the player. __Hence, we decided to compare the number of missions until some solution for each game in the different versions.__ Current version(1.8) has a range of 1-5 missions to some solution; interestingly, most solutions had 163 turns (in easy mode map) until the end of the game (solution state).
 
 __- Comparison between different versions__
 <br>The following graph represents the number of missions until the player reaches the first solution (1.4 version: unrevised choosing function without going straight feature; 1.6: without consistency check)
 
 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/graph_final.png)
 
-Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. After adding the consistency check as version 1.8, the performance is even better. It achieves the best solution within 1-5 missions. Hence, the __choose_action__ function revised in 1.6 and the __consistency check__ in 1.8 has better learning performance than the original version.
+Notice that version 1.4 did not even reach to any solution during the test of more than 200 missions. However, version 1.6 was able to finish acquiring all twenty-seven 'gold_ingot' within 2-14 missions. After adding the consistency check as version 1.8, it has upto 14x better performance compared to 1.6. It achieves the best solution within 1-5 missions. Hence, the __choose_action__ function revised in 1.6 and the __consistency check__ in 1.8 has better learning performance than the original version.
 
 ## References:
 - __The original Pac-man game__:  <https://www.google.com/search?q=pacman&rlz=1C1CHZL_zh-CNUS736US736&oq=pacman&aqs=chrome..69i57j0j69i59l2j0l2.3004j0j8&sourceid=chrome&ie=UTF-8#clb=clb>
