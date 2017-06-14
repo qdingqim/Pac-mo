@@ -75,11 +75,12 @@ Conceptual implementation of __choose_action__ function in PacMo version 1.8.
    and current cell with the same direction is >= 0:
        go straight
 5. if step 4 never happened,
-   for 1% of chance, randomly select the next directoin
-   for 99% of chance, select the direction with maximum value
+   with 1% of chance, randomly select the next direction
+   with 99% of chance, select the direction with maximum value
 ```
 
-Notice there are two consistency check procedures. These are explained at __Consistency Check__ part. Notice in the middle of the code, there is a statement that makes agent go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table. Since, the epsilon is relatively small, theoredically, 99% of the choose_action function instances are based on the above procedures. Similarly the turn ratio relative to the player's current degree (turn) is returned.
+Notice there are two consistency check procedures. These are explained at __Consistency Check__ part.
+At Step 5, the direction is choosen by the epsilon value (1% randomness). Since, the epsilon is relatively small, theoredically, 99% of the choose_action function instances are based on the above procedures.
 
 The following code is a part of updating q table function:
 ```python
@@ -99,9 +100,10 @@ q_table example:
 ### Consistency Check
 __- Forced Straight Movement:__
 
-The reason why we are using consistency check is to ensure that the agent is not trapped by negative rewards so that the q value can be updated. Since if the agent meets a monster somewhere, there would be a negative q_value in that cell, which makes an obstacle for agent. However, there might be an another moment where monster is actually far away from this cell, while the agent is still afraid to cross the cell due to the negative q_value, which makes the agent kind of "stupid". We call it time dependency here.
+The reason why we are using consistency check is to ensure that the agent is not trapped by negative rewards so that the q value can be updated. Since if the agent meets a monster somewhere, there would be a relatively small q_value in that cell due to negative rewards, which makes an obstacle for agent. In fact, there might be an another moment where monster is actually far away from this cell, while the agent is still afraid to cross the cell due to the negative q_value, which makes the agent kind of "stupid". We call it time dependency here.
 
-Therefore we are detecting the distance between the monster and the player every movement. If the distance between the monster and the player is not the safe distance, then the agent turns around to avoid the monster. However sometimes this q_value is not reliable because of time dependency. Therefore we are detecting the distance between players and monsters all the time: if agent is facing the monster, he turns around; if the cell in front of the agent has negative value, while there actually is no monster in front of him, the agent still goes forward so that the q_value of the following cell's could be updated.
+Therefore, the statement forces the agent to go to the same direction as its last direction from its last location __if and only if__ the last and the current q_value of the last direction for each cell is greater than or equal to zero. This mechanism forces the player to go straight in discovered paths. Otherwise, the player selects next direction based on the maximum value on the q_table or select some random path.
+
 
 |![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/non_meet.png)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)|![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/forcego.png)|
 ```python
