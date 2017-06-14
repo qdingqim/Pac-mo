@@ -19,6 +19,7 @@ Algorithm adapted
 ---------
 - Dijkrstra for the monster's action
 - Q-Learning for agent's reinforcement learning
+- Consistency Checking
 
 ![Alt Text](https://github.com/qdingqim/Pac-mo/raw/master/docs//decos/blank.jpg)                                                          | The monster    | |The player| |The watcher|    
 | :-------: |--- | :------:   |--- |  :--------:    |    
@@ -32,8 +33,11 @@ ___Check out the original game! :___ [click](https://www.google.com/search?q=pac
 ___See our game here!:___
 
 __Introduction:__
-<br>[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/decos/introv.png)](https://youtu.be/5p-iBizMFhM)
+<iframe width="560" height="315" src="https://youtu.be/5p-iBizMFhM" frameborder="0" allowfullscreen></iframe>
 <br><br>__Current progress:__
-<br>[![Watch the video](https://github.com/qdingqim/Pac-mo/raw/master/docs/status_etc/pv.png)](https://youtu.be/xJiR9AwN5yE)
-<br><br>[Latest Source_Code:checkout!](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_6.py)
+<iframe width="560" height="315" src="https://youtu.be/xJiR9AwN5yE" frameborder="0" allowfullscreen></iframe>()
+<br><br>__The Final:__
+<iframe width="560" height="315" src="https://www.youtube.com/embed/oc1JfCrMBqc" frameborder="0" allowfullscreen></iframe>
+<br><br>[Latest Source_Code:checkout! (easy)](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_8a.py)
+<br><br>[Latest Source_Code:checkout! (hard)](https://github.com/qdingqim/Pac-mo/blob/master/pacmo1_8b.py)
 <br>[Old version Source_Code:checkout!](https://github.com/qdingqim/Pac-mo)
