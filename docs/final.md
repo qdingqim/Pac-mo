@@ -39,7 +39,20 @@ The multi-agent is implemented by using MalmoPython.ClientPool. Also different X
 ### Dijkstra's Algorithm
 <br>We are using Dijkstra's shortest path algorithm to calculate the monster's movement. For each step of movement, the algorithm calculates its next location from current cell in its shortest path; the algorithm __monster_action__ returns its turn ratio relative to the monster's current degree (turn). Hence, the monster is always chasing to the player with a half of speed of the player.
 
-<div style="text-align:center"><img src ="https://github.com/qdingqim/Pac-mo/raw/master/docs/final_deco/dij.png" /></div>
+```python
+    dist (distance)
+    prev (previous node)
+    pq (priority queue)
+    initialize dist[start] = 0, else to +INF
+    while pq is not empty:
+        u = extract minimum value in pq
+        for each neighbor v in of u
+            alt = dist[u] + 1
+            if alt < dist[v]:
+                dist[v] = alt
+                prev[v] = u
+                pq[v] = alt
+```
 
 ### Tabular Q-learning
 <br>We are using Tabular Q-learning method for the player's (robot) movement. In the current map, there are __52 possible path cells__ (coal_block); each cell has four possible actions: __'north','south', 'east', 'west'__. Normally there are 2 possible paths in most time in this map which is shown below. The walls' q_value is set to -9999 to be excluded from possible actions. We set epsilon: 0.01, alpha = 0.6, gamma: 1, n: 2.
